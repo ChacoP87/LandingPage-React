@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Header from "./Header.jsx"
 import './styles.css'
 import './normalize.css'
 
@@ -9,16 +10,7 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1 class="titulo">Randy Santos <span>Developer</span></h1>
-
-        <nav class="navegacion-principal container container2">
-          <a href="">Inicio</a>
-          <a href="">Sobre mí</a>
-          <a href="">Clientes</a>
-          <a href="">Contactos</a>
-        </nav>
-      </header>
+      <Header />
       <section class="hero">
         <div class="contenedor-hero">
           <h2 class="titulo">Diseño y desarrollo web</h2>
