@@ -1,8 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './styles.css'
-import './normalize.css'
+import "./Header.css"
 
 function Header() {
   const [count, setCount] = useState(0)
@@ -23,4 +20,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;

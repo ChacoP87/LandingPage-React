@@ -1,17 +1,20 @@
 .titulo {
+    text-align: center;
+    font-size: 3.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+}
+
+.titulo {
     scroll-snap-align: start;
     /* Indica el punto en el contenedor de desplazamiento al que 
 debe ajustarse el contenido*/
     scroll-snap-stop: always;
     /* Controla si el desplazamiento debe detenerse siempre en 
 los puntos de ajuste */
+    margin-top: 1rem;
 }
 
-.titulo {
-    text-align: center;
-    font-size: 3.8rem;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 .titulo span {
     font-size: 2rem;
