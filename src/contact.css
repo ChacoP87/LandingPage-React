@@ -53,6 +53,10 @@ los puntos de ajuste */
     display: block;
 }
 
+.campo p {
+    color: var(--warning); 
+    font-weight: bold;
+}
 .input-text {   
     width: 100%;
     border: none;

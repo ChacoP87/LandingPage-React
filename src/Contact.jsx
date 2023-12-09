@@ -5,39 +5,40 @@ import './contact.css';
 
 function Contact() {
 
-    const { register, formState: { errors }, handleSubmit} = useForm({mode:"all"});
+    const { register, formState: { errors }, handleSubmit} = useForm({
+        mode:"all",
+        defaultValues: {
+            user_name:"",
+            user_email: "",
+            message: "",
+        },
+    });
     const form = useRef();
-    /*
-    const sendEmail = (e) => {
-        e.preventDefault();
+
+    const sendEmail = (data) => {
+
+        const templateParams = {
+            user_name: data.user_name,
+            user_email: data.user_email,
+            message: data.message,
+        }
+        
+        //e.preventDefault();
     
-        emailjs.sendForm('service_2j7pzbu', 'template_m4jt34n', form.current, 'fWDWQLPpiMR_4M9oa')
+        emailjs.send('service_2j7pzbu', 'template_m4jt34n', templateParams, 'fWDWQLPpiMR_4M9oa')
           .then((result) => {
               console.log(result.text);
           }, (error) => {
               console.log(error.text);
           });
       };
-      */
-    function sendEmail(e) {
-        e.preventDefault();
-    
-        emailjs.sendForm('service_2j7pzbu', 'template_m4jt34n', form.current, 'fWDWQLPpiMR_4M9oa')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-    }
-
-    console.log("errors", errors);
 
     return (
         <>
             <section>
                 <h2 class="contacto-heading">Contacto</h2>
                 <form ref={form} class="formulario"
-                    onSubmit={sendEmail}
+                    onSubmit={handleSubmit(sendEmail)}
                 >
                     <fieldset>
                         <legend>Llena tus datos para establecer contacto.</legend>
@@ -68,7 +69,8 @@ function Contact() {
                             </div>
                             <div class="campo">
                                 <label> Mensaje </label>
-                                <textarea {...register("message", {required:true})} name='message'></textarea>
+                                <textarea {...register("message", {required: {value: true, message: "Debe enviar un mensaje!"}})} name='message'></textarea>
+                                <p>{ errors.message?.message }</p>
                             </div>
                         </div>
 
