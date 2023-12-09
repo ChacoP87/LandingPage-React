@@ -7,9 +7,9 @@ function Header() {
   return (
     <>
       <header>
-        <h1 class="titulo">Randy Santos <span>Developer</span></h1>
+        <h1 className="titulo">Bitter Lemons <span>Developers</span></h1>
 
-        <nav class="navegacion-principal container">
+        <nav className="navegacion-principal container">
           <a href="">Inicio</a>
           <a href="">Sobre mí</a>
           <a href="">Clientes</a>

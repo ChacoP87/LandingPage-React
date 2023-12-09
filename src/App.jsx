@@ -13,17 +13,17 @@ function App() {
     <>
       <Header />
       <Hero />
-      <main class="sombra">
-        <h2 class="servicios-heading">Mis servicios</h2>
-        <div class="servicios">
+      <main className="sombra">
+        <h2 className="servicios-heading">Mis servicios</h2>
+        <div className="servicios">
           <Servicio />
         </div>
 
         <Contact />
       </main>
 
-      <footer class="footer">
-        <p>Todos los derechos reservados ©. Randy Santos Developer</p>
+      <footer className="footer">
+        <p>Todos los derechos reservados ©. BitterLeemos Developers</p>
       </footer>
     </>
   )

@@ -36,20 +36,20 @@ function Contact() {
     return (
         <>
             <section>
-                <h2 class="contacto-heading">Contacto</h2>
-                <form ref={form} class="formulario"
+                <h2 className="contacto-heading">Contacto</h2>
+                <form ref={form} className="formulario"
                     onSubmit={handleSubmit(sendEmail)}
                 >
                     <fieldset>
                         <legend>Llena tus datos para establecer contacto.</legend>
-                        <div class="contenedor-campos">
-                            <div class="campo">
+                        <div className="contenedor-campos">
+                            <div className="campo">
                                 <label> Nombre </label>
                                 <input {...register("user_name", { required: true, minLength: { value: 3, message: "La longitud minima es 3" }, })} type="text" placeholder="Tu Nombre" name='user_name'/>
                                 <p>{ errors.user_name?.message }</p>
                             </div>
                             
-                            <div class="campo">
+                            <div className="campo">
                                 <label> Telefono </label>
                                 <input
                                     {...register("phoneNumber", {
@@ -62,20 +62,20 @@ function Contact() {
                                 />
                                 <p>{ errors.phoneNumber?.message }</p>
                             </div>
-                            <div class="campo">
+                            <div className="campo">
                                 <label> Correo </label>
                                 <input {...register("user_email", { required: true, pattern: { value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, message: "El correo debe ser valido" } })} type="email" placeholder="Tu Correo" name='user_email'/>
                                 <p>{ errors.user_email?.message }</p>
                             </div>
-                            <div class="campo">
+                            <div className="campo">
                                 <label> Mensaje </label>
                                 <textarea {...register("message", {required: {value: true, message: "Debe enviar un mensaje!"}})} name='message'></textarea>
                                 <p>{ errors.message?.message }</p>
                             </div>
                         </div>
 
-                        <div class="alinear-derecha flex">
-                            <input class="boton w-sm-100" type="submit" value="Send" />
+                        <div className="alinear-derecha flex">
+                            <input className="boton w-sm-100" type="submit" value="Enviar" />
                         </div>
                     </fieldset>
                 </form>
